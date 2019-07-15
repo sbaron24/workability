@@ -1,5 +1,7 @@
 # README
 
+[![Codeship Status for sbaron24/workability](https://app.codeship.com/projects/e81debd0-8954-0137-35d4-3e01594af01a/status?branch=master)](https://app.codeship.com/projects/354528)
+
 Workability is an app that helps users or groups find great workspaces.
 
 Authors: 
