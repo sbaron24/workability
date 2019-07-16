@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'homes#index'
+  root 'places#index'
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get "/places", to: "places#index"
+  resources :places, only: [:index]
 end
