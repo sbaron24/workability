@@ -3,7 +3,4 @@ class Place < ApplicationRecord
   validates :place_type, presence: true
   validates :location, presence: true
   validates :description, presence: true
-
-
-  # add additional validations here
 end
