@@ -6,14 +6,29 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+if Rails.env.test?
   places = [
     ["Starbucks", "tea",  "Boston", "description text"],
-    ["Dunkin", "coffee", "Boston", "description text"],
+    ["Dunkin", "coffee", "Boston", "description text"]
+  ]
+end
+
+if Rails.env.development?
+  places = [
     ["McDonalds", "burgers", "Boston", "description text"],
     ["The Coffee Room", "coffee shop", "Newtown", "A warm cozy nook in the heart of Newtown, PA... where you can GET STUFF DONNNNEE"]
   ]
+end
 
-  places.each do |place_info|
-    name, place_type, location, description = place_info
-    Place.create!(name: name, place_type: place_type, location: location, description: description)
-  end
+
+  # places = [
+  #   ["Starbucks", "tea",  "Boston", "description text"],
+  #   ["Dunkin", "coffee", "Boston", "description text"],
+  #   ["McDonalds", "burgers", "Boston", "description text"],
+  #   ["The Coffee Room", "coffee shop", "Newtown", "A warm cozy nook in the heart of Newtown, PA... where you can GET STUFF DONNNNEE"]
+  # ]
+
+places.each do |place_info|
+  name, place_type, location, description = place_info
+  Place.create!(name: name, place_type: place_type, location: location, description: description)
+end

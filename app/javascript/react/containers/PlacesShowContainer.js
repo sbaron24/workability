@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import ShowDetails from "../components/ShowDetails"
 
 class PlacesShowContainer extends Component {
   constructor(props){
@@ -10,10 +11,8 @@ class PlacesShowContainer extends Component {
   }
 
   componentDidMount(){
-    debugger
-    id = this.props.match.params.id
-    debugger
-    fetch(`/api/v1/places/${id}`)
+    let place_id = this.props.match.params.id
+    fetch(`/api/v1/places/${place_id}`)
     .then(response => {
       if (response.ok) {
         return response
@@ -25,16 +24,20 @@ class PlacesShowContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      debugger
+      this.setState( {place: body.place} )
     })
     .catch(error => console.error(error.message))
   }
 
   render(){
+    debugger
 
     return(
       <div>
-
+      <h1>{this.state.place.name}</h1>
+        <ShowDetails
+          place= {this.state.place}
+        />
       </div>
     )
   }

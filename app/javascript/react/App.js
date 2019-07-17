@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Route } from "react-router-dom"
-import PlacesShowContainer from "./PlacesShowContainer"
+import PlacesShowContainer from "./containers/PlacesShowContainer"
 
 export const App = (props) => {
   return (
