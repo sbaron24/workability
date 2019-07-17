@@ -1,0 +1,30 @@
+<h1> New Place Form </h1>
+
+<%= form_for(@place) do |f| %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :place_type, "Type" %><br />
+    <%= f.select(:place_type, options_for_select(@place_type), {:include_blank => true}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.select(:location, options_for_select(@location)) %>
+
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add a Place" %>
+  </div>
+
+<% end %>

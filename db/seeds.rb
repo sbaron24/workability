@@ -8,8 +8,8 @@
 
   places = [
     ["Starbucks", "tea",  "Boston", "description text"],
-    ["Dunkin", "coffee", "Boston", "description text"],
-    ["McDonalds", "burgers", "Boston", "description text"]
+    ["Dunkin", "coffee", "Concord", "description text"],
+    ["McDonalds", "burgers", "Medford", "description text"]
   ]
 
   places.each do |place_info|
