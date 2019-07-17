@@ -30,7 +30,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
-
+  gem 'pry'
+  gem 'rspec'
+  gem 'capybara'
+  gem 'launchy'
 end
 
 group :development do

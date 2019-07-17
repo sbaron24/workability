@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+  places = [
+    ["Starbucks", "tea",  "Boston", "description text"],
+    ["Dunkin", "coffee", "Boston", "description text"],
+    ["McDonalds", "burgers", "Boston", "description text"]
+  ]
+
+  places.each do |place_info|
+    name, place_type, location, description = place_info
+    Place.create!(name: name, place_type: place_type, location: location, description: description)
+  end
