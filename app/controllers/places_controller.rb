@@ -3,29 +3,25 @@ class PlacesController < ApplicationController
     @places = Place.all
   end
 
-#
-#   def self.location
-#     @location = ["Boston", "Medford", "Malden"]
-#   end
-
   def new
     @place = Place.new
-    @place_type = ['Coffee shop', 'Park', 'Library', 'Museum']
-    @location = ['Boston', 'Medford', 'Concord', 'Somerville', 'Brighton']
+    @place_type = Place.place_type
+    @locations = Place.locations
   end
 
   def create
     @place = Place.new(place_params)
+    @place_type = Place.place_type
+    @locations = Place.locations
 
     if @place.save
       flash[:notice] = "Place added successfully!"
       redirect_to places_path
     else
-      flash.now[:error] = @place.errors.full_messages.join(", ")
+      flash.now[:error] = "Please fill out correctly!"
       render :new
     end
   end
-
 end
 
   private

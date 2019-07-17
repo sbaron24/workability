@@ -14,13 +14,12 @@
 
   <div class="field">
     <%= f.label :place_type, "Type" %><br />
-    <%= f.select(:place_type, options_for_select(@place_type), {:include_blank => true}) %>
+    <%= f.select(:place_type, options_for_select(@place_type), {:prompt => "Please select type"} ) %>
   </div>
 
   <div class="field">
     <%= f.label :location %><br />
-    <%= f.select(:location, options_for_select(@location)) %>
-
+    <%= f.select(:location, options_for_select(@locations), {:prompt => "Please select location"} ) %>
   </div>
 
   <div class="actions">
