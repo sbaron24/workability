@@ -1,4 +1,5 @@
 import PlacesShowContainer from '../../../app/javascript/react/containers/PlacesShowContainer.js'
+import ShowDetails from '../../../app/javascript/react/components/ShowDetails.js'
 import fetchMock from 'fetch-mock'
 
 describe('PlacesShowContainer', () => {
@@ -25,21 +26,23 @@ describe('PlacesShowContainer', () => {
 
   afterEach(fetchMock.restore)
 
-
   describe('listing', () => {
-  // it('renders an h2', () => {
-  //   expect(wrapper.find('h2')).toBePresent()
-  //   expect(wrapper.find('h2').text()).toEqual('Winter Todo List')
-  // })
-  //
-  // it('should have the specified initial state', () => {
-  //   expect(wrapper.state()).toEqual({ places: {} })
-  // })
+    it('should have the specified initial state', () => {
+      expect(wrapper.state()).toEqual({ place: {} })
+    })
 
-    it('should have name on the page', (done) => {
+    it('should have new state after fetch', (done) => {
       setTimeout(() => {
-        expect(wrapper.find("h1")).toBePresent()
-        expect(wrapper.find("h1").text()).toEqual(places.place.name)
+        expect(wrapper.state()).toEqual({ place: places.place })
+        done()
+      }, 0)
+    })
+
+    it('should pass down props to ShowDetails component', (done) => {
+      setTimeout(() => {
+        expect(wrapper.find(ShowDetails).props()).toEqual({
+          place: places.place
+        })
         done()
       }, 0)
     })

@@ -7,7 +7,6 @@ class PlacesShowContainer extends Component {
     this.state = {
       place: {}
     }
-    // bind
   }
 
   componentDidMount(){
@@ -30,11 +29,8 @@ class PlacesShowContainer extends Component {
   }
 
   render(){
-    debugger
-
     return(
       <div>
-      <h1>{this.state.place.name}</h1>
         <ShowDetails
           place= {this.state.place}
         />
