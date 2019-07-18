@@ -1,5 +1,4 @@
 import ShowDetails from '../../../app/javascript/react/components/ShowDetails.js'
-import fetchMock from 'fetch-mock'
 
 describe('ShowDetails', () => {
   let wrapper, places;

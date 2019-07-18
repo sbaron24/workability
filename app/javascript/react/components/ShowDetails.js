@@ -5,7 +5,7 @@ const ShowDetails = (props) => {
   return (
     <div>
       <p> Name: {props.place.name} </p>
-      <p> Locatidivon: {props.place.location} </p>
+      <p> Location: {props.place.location} </p>
       <p> Type: {props.place.place_type} </p>
       <p> Descripton: {props.place.description} </p>
     </div>

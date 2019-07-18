@@ -3,10 +3,6 @@ class PlacesController < ApplicationController
     @places = Place.all
   end
 
-  def show
-    @place = Place.find(params[:id])
-  end
-
   def new
     @place = Place.new
     @place_type = Place.place_type
@@ -26,10 +22,10 @@ class PlacesController < ApplicationController
       render :new
     end
   end
-end
 
   private
 
   def place_params
     params.require(:place).permit(:name, :description, :place_type, :location)
   end
+end
