@@ -9,7 +9,7 @@
 if Rails.env.test?
   places = [
     ["Starbucks", "tea",  "Boston", "description text"],
-    ["Dunkin", "coffee", "Boston", "description text"]
+    ["Dunkin", "coffee", "Concord", "description text"],
   ]
 end
 

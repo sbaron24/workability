@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   root 'places#index'
+
   devise_for :users
-  get "/places", to: "places#index"
-  resources :places, only: [:index, :show]
+
+  resources :places, only: [:index, :show, :new, :create]
 
   namespace :api do
     namespace :v1 do

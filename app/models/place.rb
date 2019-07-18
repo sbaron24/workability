@@ -4,6 +4,11 @@ class Place < ApplicationRecord
   validates :location, presence: true
   validates :description, presence: true
 
+  def self.place_type
+    ['Coffee shop', 'Park', 'Library', 'Museum']
+  end
 
-  # add additional validations here
+  def self.locations
+    ['Boston', 'Medford', 'Concord', 'Somerville', 'Brighton']
+  end
 end
