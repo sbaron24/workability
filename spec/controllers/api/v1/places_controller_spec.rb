@@ -4,7 +4,7 @@ RSpec.describe Api::V1::PlacesController, type: :controller do
   let!(:first_place) { Place.create(
     name: "Tatte",
     place_type: "Cafe",
-    location: "Back Bay",
+    neighborhood: "Back Bay",
     description: "baked goods and coffee!"
   )}
 
@@ -19,7 +19,7 @@ RSpec.describe Api::V1::PlacesController, type: :controller do
       expect(returned_json.length).to eq 1
       expect(returned_json["place"]["name"]).to eq(first_place.name)
       expect(returned_json["place"]["place_type"]).to eq(first_place.place_type)
-      expect(returned_json["place"]["location"]).to eq(first_place.location)
+      expect(returned_json["place"]["neighborhood"]).to eq(first_place.neighborhood)
       expect(returned_json["place"]["description"]).to eq(first_place.description)
     end
   end

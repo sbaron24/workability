@@ -7,9 +7,9 @@ feature "User adds new page form" do
     fill_in 'Name', with: 'Chuck E. Cheese'
     fill_in 'Description', with: 'germ time'
     select 'Library', from: 'Type'
-    select 'Somerville', from: 'Location'
+    select 'Somerville', from: 'Neighborhood'
     click_button 'Add a Place'
-    Place.create!(name: "Chuck E. Cheese", description: "germ time", place_type: "Library", location: "Somerville")
+    Place.create!(name: "Chuck E. Cheese", description: "germ time", place_type: "Library", neighborhood: "Somerville")
     visit '/places'
 
     expect(page).to have_content("Chuck E. Cheese")
@@ -20,7 +20,7 @@ feature "User adds new page form" do
     visit '/places/new'
     fill_in 'Description', with: 'Very nice place'
     select 'Museum', from: 'Type'
-    select 'Boston', from: 'Location'
+    select 'Boston', from: 'Neighborhood'
     click_button 'Add a Place'
 
     expect(page).to have_content("Please fill out correctly!")
@@ -30,7 +30,7 @@ feature "User adds new page form" do
     visit '/places/new'
     fill_in 'Name', with: 'Museum of Science'
     select 'Museum', from: 'Type'
-    select 'Boston', from: 'Location'
+    select 'Boston', from: 'Neighborhood'
     click_button 'Add a Place'
 
     expect(page).to have_content("Please fill out correctly!")
@@ -40,13 +40,13 @@ feature "User adds new page form" do
     visit '/places/new'
     fill_in 'Name', with: 'Museum of Science'
     fill_in 'Description', with: 'Very nice place'
-    select 'Boston', from: 'Location'
+    select 'Boston', from: 'Neighborhood'
     click_button 'Add a Place'
 
     expect(page).to have_content("Please fill out correctly!")
   end
 
-  scenario 'user does not select a location' do
+  scenario 'user does not select a neighborhood' do
     visit '/places/new'
     fill_in 'Name', with: 'Museum of Science'
     fill_in 'Description', with: 'Very nice place'

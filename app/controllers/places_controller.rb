@@ -6,13 +6,14 @@ class PlacesController < ApplicationController
   def new
     @place = Place.new
     @place_type = Place.place_type
-    @locations = Place.locations
+    @neighborhoods = Place.neighborhoods
   end
 
   def create
     @place = Place.new(place_params)
     @place_type = Place.place_type
-    @locations = Place.locations
+    @neighborhoods = Place.neighborhoods
+    binding.pry
 
     if @place.save
       flash[:notice] = "Place added successfully!"
@@ -26,6 +27,21 @@ class PlacesController < ApplicationController
   private
 
   def place_params
-    params.require(:place).permit(:name, :description, :place_type, :location)
+    params.require(:place).permit(
+      :name,
+      :description,
+      :place_type,
+      :neighborhood,
+      :wifi,
+      :food,
+      :standing_options,
+      :outdoor_seating,
+      :group_capacity,
+      :overall_workability,
+      :address,
+      :city,
+      :state,
+      :zip
+    )
   end
 end

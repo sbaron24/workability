@@ -8,7 +8,7 @@ describe('ShowDetails', () => {
       id:1,
       name: "Starbucks",
       place_type: "tea",
-      location: "Boston",
+      neighborhood: "Boston",
       description: "description text"
     }
     wrapper = mount(
@@ -27,7 +27,7 @@ describe('ShowDetails', () => {
       expect(wrapper.text().includes('tea')).toBe(true)
     })
 
-    it('component should display the location', () => {
+    it('component should display the neighborhood', () => {
       expect(wrapper.text().includes('Boston')).toBe(true)
     })
 
