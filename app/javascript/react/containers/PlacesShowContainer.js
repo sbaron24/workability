@@ -34,6 +34,9 @@ class PlacesShowContainer extends Component {
         <ShowDetails
           place= {this.state.place}
         />
+        <ReviewIndex/>
+        <ReviewForm/>
+  
       </div>
     )
   }

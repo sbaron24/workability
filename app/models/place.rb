@@ -3,6 +3,9 @@ class Place < ApplicationRecord
   validates :place_type, presence: true
   validates :location, presence: true
   validates :description, presence: true
+  has_many :reviews
+  belongs_to :user
+
 
   def self.place_type
     ['Coffee shop', 'Park', 'Library', 'Museum']

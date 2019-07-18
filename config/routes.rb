@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :places, only: [:index, :show, :new, :create]
+  resources :places, only: [:index, :show, :new, :create] do
+    resources :reviews, only: [:index, :new, :create]
+  end
 
   namespace :api do
     namespace :v1 do
