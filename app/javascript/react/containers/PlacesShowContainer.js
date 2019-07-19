@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import ShowDetails from "../components/ShowDetails"
+import ReviewsIndexContainer from "./ReviewsIndexContainer"
 
 class PlacesShowContainer extends Component {
   constructor(props){
@@ -34,9 +35,10 @@ class PlacesShowContainer extends Component {
         <ShowDetails
           place= {this.state.place}
         />
-        <ReviewIndex/>
-        <ReviewForm/>
-  
+        <ReviewsIndexContainer
+          place= {this.state.place}
+          id= {this.props.match.params.id}
+        />
       </div>
     )
   }

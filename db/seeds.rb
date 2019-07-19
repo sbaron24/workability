@@ -18,6 +18,10 @@ if Rails.env.development?
     ["McDonalds", "burgers", "Boston", "description text"],
     ["The Coffee Room", "coffee shop", "Newtown", "A warm cozy nook in the heart of Newtown, PA... where you can GET STUFF DONNNNEE"]
   ]
+
+  reviews = [
+    ["Pretty good place to study!", "noise level was minimal, wifi was great, plenty of seating but limited outlets", 4, 5, 4, 3, 3, 2, 1]
+  ]
 end
 
 
@@ -31,4 +35,9 @@ end
 places.each do |place_info|
   name, place_type, location, description = place_info
   Place.create!(name: name, place_type: place_type, location: location, description: description)
+end
+
+reviews.each do |review_info|
+  title, body, overall_rating, noise_rating, wifi_rating, capacity_rating, outlet_rating, group_max, vote_count = review_info
+  Review.create!(title: title, body: body, overall_rating: overall_rating, noise_rating: noise_rating, wifi_rating: wifi_rating, capacity_rating: capacity_rating, outlet_rating: outlet_rating, group_max: group_max, vote_count: vote_count)
 end

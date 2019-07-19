@@ -9,8 +9,6 @@ const ShowDetails = (props) => {
       <p> Type: {props.place.place_type} </p>
       <p> Descripton: {props.place.description} </p>
     </div>
-    <
-    <
   )
 }
 

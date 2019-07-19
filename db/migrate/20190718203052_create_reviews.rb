@@ -9,6 +9,7 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.integer :capacity_rating, null: false
       t.integer :outlet_rating, null: false
       t.integer :group_max, null: false
+      t.integer :vote_count, null: false
       t.belongs_to :user
       t.belongs_to :place
 
