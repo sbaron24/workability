@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_07_18_195550) do
     t.string "name", null: false
     t.string "place_type", null: false
     t.text "description", null: false
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "wifi", null: false

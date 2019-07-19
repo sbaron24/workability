@@ -2,10 +2,10 @@ class Place < ApplicationRecord
   validates :name, presence: true
   validates :place_type, presence: true
   validates :description, presence: true
-  validates :wifi, presence: true
-  validates :food, presence: true
-  validates :standing_options, presence: true
-  validates :outdoor_seating, presence: true
+  validates :wifi, inclusion: { in: [true, false] }
+  validates :food, inclusion: { in: [true, false] }
+  validates :standing_options, inclusion: { in: [true, false] }
+  validates :outdoor_seating, inclusion: { in: [true, false] }
   validates :group_capacity, presence: true
   validates :overall_workability, presence: true
   validates :address, presence: true
@@ -13,8 +13,11 @@ class Place < ApplicationRecord
   validates :state, presence: true
   validates :zip, presence: true
   validates :neighborhood, presence: true
+  validates :user_id, presence: true
 
   after_initialize :init
+
+  belongs_to :user
 
   def init
     self.group_capacity = 1

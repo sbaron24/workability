@@ -5,8 +5,7 @@ class CreatePlaces < ActiveRecord::Migration[5.2]
       t.string :place_type, null: false
       t.string :location, null: false
       t.text :description, null: false
-      t.belongs_to :user
-
+      t.belongs_to :user, null: false
 
       t.timestamps null: false
     end

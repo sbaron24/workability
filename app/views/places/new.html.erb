@@ -8,13 +8,13 @@
   </div>
 
   <div class="field">
-    <%= f.label :description, "What's the vibe?" %><br />
-    <%= f.text_field :description %>
+    <%= f.label :description, "Description" %><br />
+    <%= f.text_field :description, placeholder: "What's the vibe?" %>
   </div>
 
   <div class="field">
-    <%= f.label :place_type, "What kind of place is it?" %><br />
-    <%= f.select(:place_type, options_for_select(@place_type), {:prompt => "Please select type"} ) %>
+    <%= f.label :place_type, "Type" %><br />
+    <%= f.select(:place_type, options_for_select(@place_type), {:prompt => "What kind of place is it?"} ) %>
   </div>
 
   <div class="field">
@@ -31,7 +31,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :food, "Is there food to nom on?" %><br />
+    <%= f.label :food, "Is there food?" %><br />
     <%= f.radio_button :food, value: true %>
     <%= f.label :food, "Yes" %>
     <%= f.radio_button :food, value: false %>
