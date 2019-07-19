@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature "User signs in and adds new place with form" do
-  User.destroy_all
+  # User.destroy_all
   user = FactoryBot.create(:user)
 
   scenario 'user fills out form correctly' do

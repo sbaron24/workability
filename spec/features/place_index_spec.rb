@@ -6,7 +6,7 @@ feature "Places are listed", %Q{
   So that I can decide which place to go
 } do
 
-  User.destroy_all
+  # User.destroy_all
   user = FactoryBot.create(:user)
 
   scenario 'places are listed' do

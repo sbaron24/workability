@@ -1,11 +1,21 @@
 require "rails_helper"
 
 RSpec.describe Api::V1::PlacesController, type: :controller do
-  let!(:first_place) { Place.create(
+  user = FactoryBot.create(:user)
+  let!(:first_place) { Place.create!(
     name: "Tatte",
     place_type: "Cafe",
     neighborhood: "Back Bay",
-    description: "baked goods and coffee!"
+    description: "baked goods and coffee!",
+    user_id: 1,
+    wifi: true,
+    food: false,
+    outdoor_seating: true,
+    standing_options: false,
+    address: "234 Beacon St.",
+    city: "Boston" ,
+    state: "MA" ,
+    zip: "02116",
   )}
 
   describe "GET#show" do

@@ -6,7 +6,7 @@ feature 'user signs out', %Q{
   So that my identity is forgotten about on the machine I'm using
 } do
 
-  User.destroy_all
+  # User.destroy_all
   user = FactoryBot.create(:user)
 
   scenario 'authenticated user signs out' do
