@@ -28,9 +28,9 @@ describe('ReviewsIndexContainer', () => {
     wrapper = mount(<ReviewsIndexContainer id={1}/>)
   })
 
-  afterEach(fetchMock.restore)
+  afterEach(() => fetchMock.restore)
 
-  describe('listing', () => {
+  describe('should show an index of reviews', () => {
     it('should have the specified initial state', () => {
       expect(wrapper.state()).toEqual({ reviews: [] })
     })

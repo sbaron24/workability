@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import ReviewTile from "../components/ReviewTile"
+import ReviewFormContainer from "./ReviewFormContainer"
 
 class ReviewsIndexContainer extends Component {
   constructor(props) {
@@ -7,6 +8,7 @@ class ReviewsIndexContainer extends Component {
     this.state = {
       reviews: []
     }
+    this.addNewReview = this.addNewReview.bind(this)
   }
 
   componentDidMount(){
@@ -28,6 +30,27 @@ class ReviewsIndexContainer extends Component {
     .catch(error => console.error(error.message))
 }
 
+  addNewReview(formPayload) {
+    fetch(`/api/v1/places/${this.props.id}/reviews`, {
+      method: "POST",
+      body: JSON.stringify(formPayload)
+    })
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+          error = new Error(errorMessage);
+        throw(error);
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+      let allReviews = this.state.review
+      this.setState({ reviews: allReviews.concat(body) })
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
+}
   render() {
     console.log(this.state.reviews)
     let reviews = this.state.reviews.map(review => {
@@ -53,6 +76,9 @@ class ReviewsIndexContainer extends Component {
         <div className="small-8 small-centered columns">
           <h1>Reviews Index</h1>
           {reviews}
+          <ReviewFormContainer
+            addNewReview={this.addNewReview}
+          />
         </div>
       </div>
     )
