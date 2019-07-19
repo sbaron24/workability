@@ -3,6 +3,9 @@ class PlacesController < ApplicationController
     @places = Place.all
   end
 
+  def show
+  end
+
   def new
     @place = Place.new
     @place_type = Place.place_type
