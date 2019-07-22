@@ -20,7 +20,7 @@ feature "User signs in and adds new place with form" do
     fill_in 'Description', with: 'germ time'
     select 'Library', from: 'Type'
     select 'Somerville', from: 'Neighborhood'
-    choose 'place_wifi_valuetrue' 
+    choose 'place_wifi_valuetrue'
     choose 'place_food_valuefalse'
     choose 'place_outdoor_seating_valuetrue'
     choose 'place_standing_options_valuefalse'
