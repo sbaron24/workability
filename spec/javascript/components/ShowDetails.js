@@ -1,7 +1,8 @@
 import ShowDetails from '../../../app/javascript/react/components/ShowDetails.js'
 
 describe('ShowDetails', () => {
-  let wrapper, places;
+  let wrapper;
+  let places;
 
   beforeEach(() => {
     places = {
@@ -9,7 +10,7 @@ describe('ShowDetails', () => {
       name: "Starbucks",
       place_type: "tea",
       neighborhood: "Boston",
-      description: "description text"
+      description: "description text",
     }
     wrapper = mount(
       <ShowDetails
@@ -17,7 +18,6 @@ describe('ShowDetails', () => {
       />
     )
   })
-
   describe('listing', () => {
     it('component should display the name', () => {
       expect(wrapper.text().includes('Starbucks')).toBe(true)
