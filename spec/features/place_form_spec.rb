@@ -1,8 +1,13 @@
 require 'rails_helper'
 
 feature "User signs in and adds new place with form" do
-  # User.destroy_all
-  user = FactoryBot.create(:user)
+  let!(:user) {User.create!(
+    id: 1,
+    first_name: "Jose",
+    last_name: "Fine",
+    email: "jf@hotmail.com",
+    password: "welcome1"
+  )}
 
   scenario 'user fills out form correctly' do
     visit new_user_session_path
@@ -15,7 +20,7 @@ feature "User signs in and adds new place with form" do
     fill_in 'Description', with: 'germ time'
     select 'Library', from: 'Type'
     select 'Somerville', from: 'Neighborhood'
-    choose 'place_wifi_valuetrue' # use id for radio button
+    choose 'place_wifi_valuetrue' 
     choose 'place_food_valuefalse'
     choose 'place_outdoor_seating_valuetrue'
     choose 'place_standing_options_valuefalse'

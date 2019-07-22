@@ -6,8 +6,13 @@ feature 'user signs in', %Q{
   So that I can regain access to my account
 } do
 
-  # User.destroy_all
-  user = FactoryBot.create(:user)
+  let!(:user) {User.create!(
+    id: 1,
+    first_name: "Jose",
+    last_name: "Fine",
+    email: "jf@hotmail.com",
+    password: "welcome1"
+  )}
 
   scenario 'specify valid credentials' do
 

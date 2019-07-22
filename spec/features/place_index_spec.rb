@@ -6,8 +6,13 @@ feature "Places are listed", %Q{
   So that I can decide which place to go
 } do
 
-  # User.destroy_all
-  user = FactoryBot.create(:user)
+  let!(:user) {User.create!(
+    id: 1,
+    first_name: "Jose",
+    last_name: "Fine",
+    email: "jf@hotmail.com",
+    password: "welcome1"
+  )}
 
   scenario 'places are listed' do
     place1 = Place.create!(user: user, name: "Forge",place_type: "Coffee Shop",neighborhood: "Union Square",description: "spacious bakery that serves Intelligensia coffee and ice cream",wifi: true,food: true,outdoor_seating: false,standing_options: true,group_capacity: 4.0,address: "626 Somerville Ave",city: "Somerville",state: "MA",zip: "02143")
@@ -16,5 +21,4 @@ feature "Places are listed", %Q{
     expect(page).to have_content("Forge")
     expect(page).to have_content("Fortissimo")
   end
-
 end
