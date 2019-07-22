@@ -10,7 +10,7 @@ describe('ShowDetails', () => {
       name: "Starbucks",
       place_type: "tea",
       neighborhood: "Boston",
-      description: "description text",
+      description: "description text"
     }
     wrapper = mount(
       <ShowDetails
