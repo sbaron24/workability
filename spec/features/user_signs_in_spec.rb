@@ -5,9 +5,16 @@ feature 'user signs in', %Q{
   I want to sign in
   So that I can regain access to my account
 } do
-  scenario 'specify valid credentials' do
-    user = FactoryBot.create(:user)
 
+  let!(:user) {User.create!(
+    id: 1,
+    first_name: "Jose",
+    last_name: "Fine",
+    email: "jf@hotmail.com",
+    password: "welcome1"
+  )}
+
+  scenario 'specify valid credentials' do
     visit new_user_session_path
 
     fill_in 'Email', with: user.email

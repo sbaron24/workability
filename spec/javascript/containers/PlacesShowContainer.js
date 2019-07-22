@@ -13,7 +13,7 @@ describe('PlacesShowContainer', () => {
         id: 1,
         name: "Starbucks",
         place_type: "tea",
-        location: "Boston",
+        neighborhood: "Boston",
         description: "description text"
       }
     }

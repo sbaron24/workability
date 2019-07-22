@@ -1,14 +1,15 @@
 import ShowDetails from '../../../app/javascript/react/components/ShowDetails.js'
 
 describe('ShowDetails', () => {
-  let wrapper, places;
+  let wrapper;
+  let places;
 
   beforeEach(() => {
     places = {
       id:1,
       name: "Starbucks",
       place_type: "tea",
-      location: "Boston",
+      neighborhood: "Boston",
       description: "description text"
     }
     wrapper = mount(
@@ -17,7 +18,6 @@ describe('ShowDetails', () => {
       />
     )
   })
-
   describe('listing', () => {
     it('component should display the name', () => {
       expect(wrapper.text().includes('Starbucks')).toBe(true)
@@ -27,7 +27,7 @@ describe('ShowDetails', () => {
       expect(wrapper.text().includes('tea')).toBe(true)
     })
 
-    it('component should display the location', () => {
+    it('component should display the neighborhood', () => {
       expect(wrapper.text().includes('Boston')).toBe(true)
     })
 
