@@ -6,4 +6,8 @@
     </li>
   <% end %>
 
-  <%= link_to 'Add New Place', new_place_path %>
+<% if !current_user.nil? %>
+  <% if user_signed_in? || current_user.admin? %>
+    <%= link_to 'Add New Place', new_place_path %>
+  <% end %>
+<% end %>
