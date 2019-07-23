@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-feature 'user signs in', %Q{
-  As a signed up user
+feature 'admin signs in', %Q{
+  As a signed up admin
   I want to sign in
-  So that I can regain access to my account
+  So that I can regain access to my admin account
 } do
 
   let!(:user) {User.create!(
@@ -11,7 +11,8 @@ feature 'user signs in', %Q{
     first_name: "Jose",
     last_name: "Fine",
     email: "jf@hotmail.com",
-    password: "welcome1"
+    password: "welcome1",
+    role: "admin"
   )}
 
   scenario 'specify valid credentials' do

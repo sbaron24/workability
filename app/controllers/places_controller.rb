@@ -1,4 +1,6 @@
 class PlacesController < ApplicationController
+  before_action :authorize_user, except: [:index, :show]
+
   def index
     @places = Place.all
   end
@@ -7,16 +9,23 @@ class PlacesController < ApplicationController
     @place = Place.find(params[:id])
   end
 
+  def edit
+    @place = Place.find(params[:id])
+    @place_type = Place.place_type
+    @neighborhoods = Place.neighborhoods
+  end
+
   def new
     @place = Place.new
     @place_type = Place.place_type
-    @locations = Place.locations
+    @neighborhoods = Place.neighborhoods
   end
 
   def create
     @place = Place.new(place_params)
+    @place.user = current_user
     @place_type = Place.place_type
-    @locations = Place.locations
+    @neighborhoods = Place.neighborhoods
 
     if @place.save
       flash[:notice] = "Place added successfully!"
@@ -26,10 +35,46 @@ class PlacesController < ApplicationController
       render :new
     end
   end
-end
+
+  def update
+    @place = Place.find(params[:id])
+    @place.user = current_user
+    @place_type = Place.place_type
+    @neighborhoods = Place.neighborhoods
+    if @place.update(place_params)
+      flash[:notice] = "Edits saved successfully!"
+      redirect_to @place
+    else
+      flash.now[:notice] = "Failed to save edits."
+      render :edit
+    end
+  end
 
   private
 
   def place_params
-    params.require(:place).permit(:name, :description, :place_type, :location)
+    params.require(:place).permit(
+      :name,
+      :description,
+      :place_type,
+      :neighborhood,
+      :wifi,
+      :food,
+      :standing_options,
+      :outdoor_seating,
+      :group_capacity,
+      :overall_workability,
+      :address,
+      :city,
+      :state,
+      :zip
+    )
   end
+
+  def authorize_user
+    if !user_signed_in? || !current_user.admin?
+      flash[:notice] = "You do not have access to this page."
+      redirect_to root_path
+    end
+  end
+end

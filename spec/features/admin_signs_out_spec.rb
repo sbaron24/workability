@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-feature 'user signs in', %Q{
-  As a signed up user
-  I want to sign in
-  So that I can regain access to my account
+feature 'admin signs out', %Q{
+  As an admin
+  I want to sign out
+  So that my identity is forgotten about on the machine I'm using
 } do
 
   let!(:user) {User.create!(
@@ -11,10 +11,12 @@ feature 'user signs in', %Q{
     first_name: "Jose",
     last_name: "Fine",
     email: "jf@hotmail.com",
-    password: "welcome1"
+    password: "welcome1",
+    role: "admin"
   )}
 
-  scenario 'specify valid credentials' do
+  scenario 'admin user signs out' do
+
     visit new_user_session_path
 
     fill_in 'Email', with: user.email
@@ -23,14 +25,13 @@ feature 'user signs in', %Q{
     click_button 'Log in'
 
     expect(page).to have_content('Signed in successfully')
-    expect(page).to have_content('Sign Out')
+
+    click_link 'Sign Out'
+    expect(page).to have_content('Signed out successfully')
   end
 
-  scenario 'specify invalid credentials' do
-    visit new_user_session_path
-
-    click_button 'Log in'
-    expect(page).to have_content('Invalid Email or password')
+  scenario 'unauthenticated and non-admin user attempts to sign out' do
+    visit '/'
     expect(page).to_not have_content('Sign Out')
   end
 end

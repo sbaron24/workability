@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_18_203052) do
+ActiveRecord::Schema.define(version: 2019_07_23_135200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,11 +18,21 @@ ActiveRecord::Schema.define(version: 2019_07_18_203052) do
   create_table "places", force: :cascade do |t|
     t.string "name", null: false
     t.string "place_type", null: false
-    t.string "location", null: false
     t.text "description", null: false
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "wifi", null: false
+    t.boolean "food", null: false
+    t.boolean "outdoor_seating", null: false
+    t.boolean "standing_options", null: false
+    t.float "group_capacity", default: 1.0, null: false
+    t.float "overall_workability", default: 0.0, null: false
+    t.string "address", null: false
+    t.string "city", null: false
+    t.string "state", null: false
+    t.string "zip", null: false
+    t.string "neighborhood", null: false
     t.index ["user_id"], name: "index_places_on_user_id"
   end
 
@@ -54,6 +64,7 @@ ActiveRecord::Schema.define(version: 2019_07_18_203052) do
     t.datetime "updated_at", null: false
     t.string "first_name", null: false
     t.string "last_name", null: false
+    t.string "role", default: "member", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

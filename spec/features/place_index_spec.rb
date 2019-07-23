@@ -6,14 +6,19 @@ feature "Places are listed", %Q{
   So that I can decide which place to go
 } do
 
-  scenario 'places are listed in order' do
-    place1 = Place.create!(name: "Starbucks", place_type: "tea", location: "Boston", description: "description text")
-    place2 = Place.create!(name: "Dunkin", place_type: "coffee", location: "Boston", description: "description text")
-    place3 = Place.create!(name: "McDonalds", place_type: "burgers", location: "Boston", description: "description text")
-    visit '/places'
-    expect(page).to have_content("Starbucks")
-    expect(page).to have_content("Dunkin")
-    expect(page).to have_content("McDonalds")
-  end
+  let!(:user) {User.create!(
+    id: 1,
+    first_name: "Jose",
+    last_name: "Fine",
+    email: "jf@hotmail.com",
+    password: "welcome1"
+  )}
 
+  scenario 'places are listed' do
+    place1 = Place.create!(user: user, name: "Forge",place_type: "Coffee Shop",neighborhood: "Union Square",description: "spacious bakery that serves Intelligensia coffee and ice cream",wifi: true,food: true,outdoor_seating: false,standing_options: true,group_capacity: 4.0,address: "626 Somerville Ave",city: "Somerville",state: "MA",zip: "02143")
+    place2 = Place.create!(user: user, name: "Fortissimo",place_type: "Coffee Shop",neighborhood: "Union Square",description: "serves coffee and Portuguese nom noms",wifi: true,food: true,outdoor_seating: false,standing_options: true,group_capacity: 4.0,address: "365 Somerville Ave",city: "Somerville",state: "MA",zip: "02143")
+    visit '/places'
+    expect(page).to have_content("Forge")
+    expect(page).to have_content("Fortissimo")
+  end
 end

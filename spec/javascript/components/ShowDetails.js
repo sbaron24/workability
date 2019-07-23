@@ -1,8 +1,8 @@
 import ShowDetails from '../../../app/javascript/react/components/ShowDetails.js'
-import fetchMock from 'fetch-mock'
 
 describe('ShowDetails', () => {
-  let wrapper, places;
+  let wrapper;
+  let places;
 
   beforeEach(() => {
     places = {
@@ -18,7 +18,6 @@ describe('ShowDetails', () => {
       />
     )
   })
-
   describe('listing', () => {
     it('component should display the name', () => {
       expect(wrapper.text().includes('Starbucks')).toBe(true)
