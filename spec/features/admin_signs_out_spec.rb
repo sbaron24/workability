@@ -1,0 +1,37 @@
+require 'rails_helper'
+
+feature 'admin signs out', %Q{
+  As an admin
+  I want to sign out
+  So that my identity is forgotten about on the machine I'm using
+} do
+
+  let!(:user) {User.create!(
+    id: 1,
+    first_name: "Jose",
+    last_name: "Fine",
+    email: "jf@hotmail.com",
+    password: "welcome1",
+    role: "admin"
+  )}
+
+  scenario 'admin user signs out' do
+
+    visit new_user_session_path
+
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+
+    click_button 'Log in'
+
+    expect(page).to have_content('Signed in successfully')
+
+    click_link 'Sign Out'
+    expect(page).to have_content('Signed out successfully')
+  end
+
+  scenario 'unauthenticated and non-admin user attempts to sign out' do
+    visit '/'
+    expect(page).to_not have_content('Sign Out')
+  end
+end
