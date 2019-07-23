@@ -6,7 +6,8 @@ feature "User signs in and adds new place with form" do
     first_name: "Jose",
     last_name: "Fine",
     email: "jf@hotmail.com",
-    password: "welcome1"
+    password: "welcome1",
+    role: "admin"
   )}
 
   scenario 'user fills out form correctly' do
