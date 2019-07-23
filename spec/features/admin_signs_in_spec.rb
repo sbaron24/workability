@@ -1,0 +1,37 @@
+require 'rails_helper'
+
+feature 'admin signs in', %Q{
+  As a signed up admin
+  I want to sign in
+  So that I can regain access to my admin account
+} do
+
+  let!(:user) {User.create!(
+    id: 1,
+    first_name: "Jose",
+    last_name: "Fine",
+    email: "jf@hotmail.com",
+    password: "welcome1",
+    role: "admin"
+  )}
+
+  scenario 'specify valid credentials' do
+    visit new_user_session_path
+
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+
+    click_button 'Log in'
+
+    expect(page).to have_content('Signed in successfully')
+    expect(page).to have_content('Sign Out')
+  end
+
+  scenario 'specify invalid credentials' do
+    visit new_user_session_path
+
+    click_button 'Log in'
+    expect(page).to have_content('Invalid Email or password')
+    expect(page).to_not have_content('Sign Out')
+  end
+end
