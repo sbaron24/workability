@@ -2,7 +2,7 @@
 </div>
 
 <% if !current_user.nil? %>
-  <% if user_signed_in? && current_user.admin? || current_user.id == @place.id %>
+  <% if user_signed_in? && current_user.admin? || current_user.id == @place.user_id %>
     <%= link_to 'Edit', edit_place_path(@place), class:"button" %>
   <% end %>
 <% end %>
