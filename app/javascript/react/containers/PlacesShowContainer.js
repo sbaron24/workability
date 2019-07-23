@@ -37,7 +37,6 @@ class PlacesShowContainer extends Component {
         />
         <ReviewsIndexContainer
           place= {this.state.place}
-          id= {this.props.match.params.id}
         />
       </div>
     )

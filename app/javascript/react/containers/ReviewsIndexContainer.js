@@ -8,11 +8,10 @@ class ReviewsIndexContainer extends Component {
     this.state = {
       reviews: []
     }
-    this.addNewReview = this.addNewReview.bind(this)
   }
 
   componentDidMount(){
-    fetch(`/api/v1/places/${this.props.id}/reviews`)
+    fetch(`/api/v1/places/${this.props.place.id}/reviews`)
     .then(response => {
       if (response.ok) {
         return response
@@ -28,29 +27,8 @@ class ReviewsIndexContainer extends Component {
       this.setState( { reviews: body } )
     })
     .catch(error => console.error(error.message))
-}
+  }
 
-  addNewReview(formPayload) {
-    fetch(`/api/v1/places/${this.props.id}/reviews`, {
-      method: "POST",
-      body: JSON.stringify(formPayload)
-    })
-    .then(response => {
-      if (response.ok) {
-        return response;
-      } else {
-        let errorMessage = `${response.status} (${response.statusText})`,
-          error = new Error(errorMessage);
-        throw(error);
-      }
-    })
-    .then(response => response.json())
-    .then(body => {
-      let allReviews = this.state.review
-      this.setState({ reviews: allReviews.concat(body) })
-    })
-    .catch(error => console.error(`Error in fetch: ${error.message}`));
-}
   render() {
     console.log(this.state.reviews)
     let reviews = this.state.reviews.map(review => {
@@ -66,21 +44,18 @@ class ReviewsIndexContainer extends Component {
           capacity_rating={review.capacity_rating}
           outlet_rating={review.outlet_rating}
           group_max={review.group_max}
-          vote_count={review.vote_count}
+          created_at={review.created_at}
         />
       )
     })
 
   return(
     <div className="row">
-        <div className="small-8 small-centered columns">
-          <h1>Reviews Index</h1>
-          {reviews}
-          <ReviewFormContainer
-            addNewReview={this.addNewReview}
-          />
-        </div>
+      <div className="small-8 small-centered columns">
+        <h1>Reviews</h1>
+        {reviews}
       </div>
+    </div>
     )
   }
 }
