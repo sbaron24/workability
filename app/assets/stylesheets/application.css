@@ -15,3 +15,21 @@
  *= require foundation_and_overrides
 
  */
+
+body {
+  background-color: #FFFFFF
+}
+
+.small-block-grid-3 {
+  display: center;
+  align-content: center;
+}
+
+.fitpic {
+  width: 250px;
+}
+
+.tile {
+  width: auto;
+  display: inline-block;
+}
