@@ -6,7 +6,7 @@ describe('ShowDetails', () => {
 
   beforeEach(() => {
     places = {
-      id:1,
+      id: 1,
       name: "Starbucks",
       place_type: "tea",
       neighborhood: "Boston",

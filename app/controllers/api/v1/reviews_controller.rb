@@ -3,7 +3,8 @@ class Api::V1::ReviewsController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
   def index
-    render json: Review.all
+    place = Place.find(params["place_id"])
+    render json: place.reviews
   end
 
   def create

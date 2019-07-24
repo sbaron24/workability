@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 2019_07_23_135200) do
     t.integer "capacity_rating", null: false
     t.integer "outlet_rating", null: false
     t.integer "group_max", null: false
-    t.integer "vote_count", null: false
     t.bigint "user_id"
     t.bigint "place_id"
     t.datetime "created_at", null: false
