@@ -1,10 +1,15 @@
+<h1> Find a place to work </h1>
 
+<div class="small-block-grid-3">
   <% @places.each do |place| %>
-    <li>
-      <%= place.name %> |
-      <%= place.neighborhood %>
-    </li>
+    <div class="panel tile">
+      <div>
+        <img class="fitpic" src="https://images.pexels.com/photos/683039/pexels-photo-683039.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+      </div>
+      <a href = "/places/<%= place[:id] %>"> <%= place[:name] %> | <%= place[:neighborhood] %> <a>
+    </div>
   <% end %>
+</div>
 
 <% if !current_user.nil? %>
   <% if user_signed_in? || current_user.admin? %>
