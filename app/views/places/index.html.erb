@@ -4,7 +4,7 @@
   <% @places.each do |place| %>
     <div class="panel tile">
       <div>
-        <img class="fitpic" src="https://images.pexels.com/photos/683039/pexels-photo-683039.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+        <img class="fitpic" src= <%= place[:place_image] %> />
       </div>
       <a href = "/places/<%= place[:id] %>"> <%= place[:name] %> | <%= place[:neighborhood] %> <a>
     </div>
