@@ -14,6 +14,7 @@ feature "Authenticated user can delete the place they created", %Q{
     password: "welcome1",
     role: "member"
   )}
+
   let!(:user2) {User.create!(
     id: 2,
     first_name: "Amy",
