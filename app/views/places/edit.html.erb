@@ -1,5 +1,6 @@
 <h1> Edit form for <%= @place.name %>  </h1>
 
+<div class="form">
 <%= form_for(@place) do |f| %>
 
   <div class="field">
@@ -77,5 +78,7 @@
   <div class="actions">
     <%= f.submit "Edit Place" %>
   </div>
-
 <% end %>
+</div>
+
+<%= link_to 'Delete Place', @place, method: :delete, class:"button" %>
