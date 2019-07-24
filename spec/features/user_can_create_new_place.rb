@@ -16,10 +16,7 @@ feature "Authenticated user can log in add a new place", %Q{
   )}
 
   scenario 'authenticated user is able to add a new place' do
-    visit new_user_session_path
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    click_button 'Log in'
+    sign_in_as(user)
 
     expect(page).to have_link("Add New Place")
     expect(page).to have_current_path("/")

@@ -35,10 +35,7 @@ feature "Authenticated user can edit the place they created", %Q{
   scenario 'authenticated user is able to edit a place they created' do
     place1 = Place.create!(user: user, name: "Forge",place_type: "Coffee Shop",neighborhood: "Union Square",description: "spacious bakery that serves Intelligensia coffee and ice cream",wifi: true,food: true,outdoor_seating: false,standing_options: true,group_capacity: 4.0,address: "626 Somerville Ave",city: "Somerville",state: "MA",zip: "02143")
 
-    visit new_user_session_path
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    click_button 'Log in'
+    sign_in_as(user)
 
     visit "/places/#{place1.id}"
     expect(page).to have_content("Edit")
@@ -51,10 +48,7 @@ feature "Authenticated user can edit the place they created", %Q{
     place1 = Place.create!(user: user, name: "Forge",place_type: "Coffee Shop",neighborhood: "Union Square",description: "spacious bakery that serves Intelligensia coffee and ice cream",wifi: true,food: true,outdoor_seating: false,standing_options: true,group_capacity: 4.0,address: "626 Somerville Ave",city: "Somerville",state: "MA",zip: "02143")
     place2 = Place.create!(user: user2, name: "Fortissimo",place_type: "Coffee Shop",neighborhood: "Union Square",description: "serves coffee and Portuguese nom noms",wifi: true,food: true,outdoor_seating: false,standing_options: true,group_capacity: 4.0,address: "365 Somerville Ave",city: "Somerville",state: "MA",zip: "02143")
 
-    visit new_user_session_path
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    click_button 'Log in'
+    sign_in_as(user)
 
     visit "/places/#{place2.id}"
     expect(page).to_not have_content("Edit")
