@@ -26,13 +26,13 @@ class PlacesShowContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      this.setState( {place: body.place, reviews: body.place.reviews} )
+      this.setState( {place: body.place} )
     })
     .catch(error => console.error(error.message))
   }
 
   render(){
-    let reviews = this.state.reviews.map(review => {
+    let reviews = this.state.place.reviews.map(review => {
       return(
         <ReviewTile
           key={review.id}
