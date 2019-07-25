@@ -6,7 +6,6 @@ class Review < ApplicationRecord
   validates :capacity_rating, null: false
   validates :outlet_rating, null: false
   validates :group_max, null: false
-  validates :vote_count, null: false
 
   belongs_to :user, optional: true
   belongs_to :place, optional: true

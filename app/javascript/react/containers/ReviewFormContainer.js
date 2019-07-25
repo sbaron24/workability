@@ -66,7 +66,6 @@ class ReviewFormContainer extends Component {
 }
 
   handleChange(event) {
-    // this.validateTitleInput(event.target.value)
     this.setState({ [event.target.name]: event.target.value })
   }
 

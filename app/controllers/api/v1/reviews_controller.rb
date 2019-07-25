@@ -16,9 +16,9 @@ class Api::V1::ReviewsController < ApplicationController
       wifi_rating: review_params[:wifiRating],
       capacity_rating: review_params[:capacityRating],
       outlet_rating: review_params[:outletRating],
-      group_max: review_params[:groupMax],
-      vote_count: 1
+      group_max: review_params[:groupMax]
     )
+
     review.place = place
     review.user = current_user
     if review.save
