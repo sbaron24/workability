@@ -11,8 +11,8 @@ const ReviewTile = (props) => {
   }
 
   let date = props.created_at
-  let stringDate = new Date(date).toString().slice(0,24)
-
+  let stringDate = new Date(date).toString().slice(0,15)
+  debugger
   return (
     <div className="review-tile panel">
       <h3>{props.title}</h3>
