@@ -21,7 +21,7 @@ describe('ReviewTile', () => {
       expect(wrapper.text().includes('Very good')).toBe(true)
     })
     it('should display the date', () => {
-      expect(wrapper.text().includes("Mon Jul 22 2019 15:20:23")).toBe(true)
+      expect(wrapper.text()).toContain("Mon Jul 22 2019 15:20:23")
     })
     it('should display the wifi rating', () => {
       expect(wrapper.text().includes('wifi: 3')).toBe(true)
