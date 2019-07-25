@@ -20,6 +20,7 @@ describe('ReviewTile', () => {
     it('should display the title', () => {
       expect(wrapper.text().includes('Very good')).toBe(true)
     })
+
     it('should display the date', () => {
       expect(wrapper.text()).toContain("Mon Jul 22 2019")
     })

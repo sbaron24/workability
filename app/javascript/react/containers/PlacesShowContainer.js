@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import ShowDetails from "../components/ShowDetails"
+import ReviewFormContainer  from "./ReviewFormContainer"
 import ReviewTile from "../components/ReviewTile"
 
 class PlacesShowContainer extends Component {
@@ -10,6 +11,7 @@ class PlacesShowContainer extends Component {
         reviews: []
       }
     }
+    this.addNewReview = this.addNewReview.bind(this)
   }
 
   componentDidMount(){
@@ -30,6 +32,35 @@ class PlacesShowContainer extends Component {
     })
     .catch(error => console.error(error.message))
   }
+
+  addNewReview(formPayload) {
+    fetch(`/api/v1/places/${this.state.place.id}/reviews`, {
+      credentials: 'same-origin',
+      method: "POST",
+      body: JSON.stringify(formPayload),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+          error = new Error(errorMessage);
+        throw(error);
+      }
+    })
+    .then(response => response.json())
+    .then(review => {
+      let allReviews = this.state.place.reviews
+      let place = this.state.place
+      place.reviews = allReviews.concat(review)
+      this.setState({ place: place })
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
+}
 
   render(){
     let reviews = this.state.place.reviews.map(review => {
@@ -54,6 +85,9 @@ class PlacesShowContainer extends Component {
       <div>
         <ShowDetails
           place= {this.state.place}
+        />
+        <ReviewFormContainer
+          addNewReview={this.addNewReview}
         />
         {reviews}
       </div>
