@@ -37,6 +37,23 @@ ActiveRecord::Schema.define(version: 2019_07_24_211907) do
     t.index ["user_id"], name: "index_places_on_user_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "body"
+    t.integer "overall_rating", null: false
+    t.integer "noise_rating", null: false
+    t.integer "wifi_rating", null: false
+    t.integer "capacity_rating", null: false
+    t.integer "outlet_rating", null: false
+    t.integer "group_max", null: false
+    t.bigint "user_id"
+    t.bigint "place_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["place_id"], name: "index_reviews_on_place_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

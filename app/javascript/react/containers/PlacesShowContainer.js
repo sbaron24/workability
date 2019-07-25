@@ -1,11 +1,14 @@
 import React, { Component } from "react"
 import ShowDetails from "../components/ShowDetails"
+import ReviewTile from "../components/ReviewTile"
 
 class PlacesShowContainer extends Component {
   constructor(props){
     super(props)
     this.state = {
-      place: {}
+      place: {
+        reviews: []
+      }
     }
   }
 
@@ -29,11 +32,30 @@ class PlacesShowContainer extends Component {
   }
 
   render(){
+    let reviews = this.state.place.reviews.map(review => {
+      return(
+        <ReviewTile
+          key={review.id}
+          id={review.id}
+          title={review.title}
+          body={review.body}
+          overall_rating={review.overall_rating}
+          noise_rating={review.noise_rating}
+          wifi_rating={review.wifi_rating}
+          capacity_rating={review.capacity_rating}
+          outlet_rating={review.outlet_rating}
+          group_max={review.group_max}
+          created_at={review.created_at}
+        />
+      )
+    })
+
     return(
       <div>
         <ShowDetails
           place= {this.state.place}
         />
+        {reviews}
       </div>
     )
   }
