@@ -19,6 +19,8 @@ class Place < ApplicationRecord
 
   belongs_to :user
 
+  mount_uploader :place_photo, PlacePhotoUploader
+
   def init
     self.group_capacity = 1
     self.overall_workability = 0
