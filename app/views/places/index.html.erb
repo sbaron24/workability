@@ -1,18 +1,19 @@
 <h1> Find a place to work </h1>
 
+
 <div class="small-block-grid-3">
   <% @places.each do |place| %>
     <div class="panel tile">
       <div>
-        <img class="fitpic" src="https://images.pexels.com/photos/683039/pexels-photo-683039.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+        <img class="fitpic" src='<%= place.place_photo %>' alt="Place Image" />
       </div>
-      <a href = "/places/<%= place[:id] %>"> <%= place[:name] %> | <%= place[:neighborhood] %> <a>
+      <a href = "/places/<%= place[:id] %>"> <%= place[:name] %> | <%= place[:neighborhood] %> </a>
     </div>
   <% end %>
 </div>
 
 <% if !current_user.nil? %>
   <% if user_signed_in? || current_user.admin? %>
-    <%= link_to 'Add New Place', new_place_path %>
+    <%= link_to 'Add New Place', new_place_path, class:"button" %>
   <% end %>
 <% end %>
