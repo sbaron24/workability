@@ -28,18 +28,16 @@ class ReviewFormContainer extends Component {
 
   handleFormSubmit(event) {
     event.preventDefault();
-    if (
-      this.validateReviewTitleInput(this.state.reviewTitle) &&
-      this.validateReviewBodyInput(this.state.reviewBody)
-  ) {
-    let formPayload = {
-      title: this.state.reviewTitle,
-      body: this.state.reviewBody
+    if (this.validateReviewTitleInput(this.state.reviewTitle) &&
+    this.validateReviewBodyInput(this.state.reviewBody)) {
+      let formPayload = {
+        title: this.state.reviewTitle,
+        body: this.state.reviewBody
+      }
+      this.props.addNewReview(formPayload)
+      this.handleClearForm(event)
     }
-    this.props.addNewReview(formPayload)
-    this.handleClearForm(event)
   }
-}
 
   handleReviewTitleChange(event) {
     this.validateReviewTitleInput(event.target.value)

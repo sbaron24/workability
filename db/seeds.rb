@@ -2,7 +2,8 @@ sean = User.create(
   first_name: "Sean",
   last_name: "Baron",
   email: "seanman77@gmail.com",
-  password: "password"
+  password: "password",
+  role: "member"
 )
 
 forge = Place.create!(
@@ -38,7 +39,8 @@ jay = User.create(
   first_name: "Jay",
   last_name: "Kim",
   email: "jayman77@gmail.com",
-  password: "password"
+  password: "password",
+  role: "member"
 )
 
 prudential = Place.create!(

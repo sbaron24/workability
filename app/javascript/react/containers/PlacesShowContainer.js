@@ -6,8 +6,9 @@ class PlacesShowContainer extends Component {
   constructor(props){
     super(props)
     this.state = {
-      place: {},
-      reviews: []
+      place: {
+        reviews: []
+      }
     }
   }
 
