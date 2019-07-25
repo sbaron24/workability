@@ -1,0 +1,44 @@
+.review-tile {
+  border-radius: 3px;
+}
+.ratings-div {
+  width: 100%;
+}
+
+.rating{
+  width: 100px;
+  display: inline-block;
+  border-radius: 5px;
+  text-align: center;
+  margin-left: 5px;
+}
+
+.panel .rating p {
+  color: white;
+}
+
+.center{
+  margin: auto;
+  color: white;
+}
+
+.wifi {
+  margin-left: 0px;
+  background-color: #438cd1;
+}
+
+.noise {
+  background-color: #43d1c0;
+}
+
+.outlet {
+  background-color: #43d175;
+}
+
+.capacity {
+  background-color: #a943d1;
+}
+
+#body-text {
+  padding: 10px 0px;
+}

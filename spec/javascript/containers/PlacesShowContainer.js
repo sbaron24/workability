@@ -1,50 +1,85 @@
 import PlacesShowContainer from '../../../app/javascript/react/containers/PlacesShowContainer.js'
 import ShowDetails from '../../../app/javascript/react/components/ShowDetails.js'
-import fetchMock from 'fetch-mock'
+import ReviewTile from '../../../app/javascript/react/components/ReviewTile.js'
 
 describe('PlacesShowContainer', () => {
-  let wrapper;
-  let places;
+ let wrapper;
+ let place = {
+   id: 1,
+   name: "Starbucks",
+   place_type: "tea",
+   neighborhood: "Boston",
+   description: "description text",
+   reviews: [
+        {
+          id: 1,
+          title: "Very good",
+          body: "nice place",
+          overall_rating: 5,
+          noise_rating: 5,
+          wifi_rating: 5,
+          capacity_rating: 5,
+          outlet_rating: 5,
+          group_max: 5,
+          created_at: "January 10th, 2019"
+        }
+    ]
+}
 
-  beforeEach(() => {
-    const routerParams = { params : {id: 1} }
-    places = {
-      place: {
-        id: 1,
-        name: "Starbucks",
-        place_type: "tea",
-        neighborhood: "Boston",
-        description: "description text"
-      }
-    }
-    fetchMock.get(`/api/v1/places/${routerParams.params.id}`, {
-      status: 200,
-      body: places
-    })
-    wrapper = mount(<PlacesShowContainer match={routerParams} />)
-  })
+ beforeEach(() => {
+   let place = {
+     id: 1,
+     name: "Starbucks",
+     place_type: "tea",
+     neighborhood: "Boston",
+     description: "description text",
+     reviews: [
+          {
+            id: 1,
+            title: "Very good",
+            body: "nice place",
+            overall_rating: 5,
+            noise_rating: 5,
+            wifi_rating: 5,
+            capacity_rating: 5,
+            outlet_rating: 5,
+            group_max: 5,
+            created_at: "January 10th, 2019"
+          }
+      ]
+  }
 
-  afterEach(fetchMock.restore)
+  let reviews =
+   wrapper = shallow(<PlacesShowContainer />)
+ })
 
-  describe('listing', () => {
-    it('should have the specified initial state', () => {
-      expect(wrapper.state()).toEqual({ place: {} })
-    })
+ describe('container state and props passed to ShowDetails and ReviewTile', () => {
 
-    it('should have new state after fetch', (done) => {
-      setTimeout(() => {
-        expect(wrapper.state()).toEqual({ place: places.place })
-        done()
-      }, 0)
-    })
-
-    it('should pass down props to ShowDetails component', (done) => {
-      setTimeout(() => {
-        expect(wrapper.find(ShowDetails).props()).toEqual({
-          place: places.place
-        })
-        done()
-      }, 0)
-    })
-  })
+   it('should have the specified initial state', () => {
+     expect(wrapper.state()).toEqual({ place: { reviews: [] } })
+   })
+   it('should have new state after fetch', () => {
+     wrapper.setState({ place: place })
+     expect(wrapper.state()).toEqual({ place: place })
+   })
+   it('should pass down props to ShowDetails component', () => {
+     wrapper.setState({ place: place })
+     expect(wrapper.find(ShowDetails).props()).toEqual({ place: place })
+   })
+   it('should pass down props to ReviewTile component', () => {
+     wrapper.setState({ place: place })
+     expect(wrapper.find(ReviewTile).props()).toEqual({
+       id: 1,
+       title: "Very good",
+       body: "nice place",
+       overall_rating: 5,
+       noise_rating: 5,
+       wifi_rating: 5,
+       capacity_rating: 5,
+       outlet_rating: 5,
+       group_max: 5,
+       created_at: "January 10th, 2019"
+     })
+   })
+ })
 })

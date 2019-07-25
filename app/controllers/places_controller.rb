@@ -74,7 +74,8 @@ class PlacesController < ApplicationController
       :address,
       :city,
       :state,
-      :zip
+      :zip,
+      :place_photo
     )
   end
 

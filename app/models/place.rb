@@ -17,7 +17,10 @@ class Place < ApplicationRecord
 
   after_initialize :init
 
+  has_many :reviews
   belongs_to :user
+
+  mount_uploader :place_photo, PlacePhotoUploader
 
   def init
     self.group_capacity = 1
