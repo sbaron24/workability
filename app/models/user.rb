@@ -10,7 +10,13 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :places
 
+  mount_uploader :profile_photo, ProfilePhotoUploader
+
   def admin?
     role == "admin"
+  end
+
+  def member?
+    role == "member"
   end
 end

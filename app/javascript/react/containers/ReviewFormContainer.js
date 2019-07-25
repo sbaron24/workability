@@ -58,12 +58,11 @@ class ReviewFormContainer extends Component {
       capacityRating: capacityRating,
       outletRating: outletRating,
       groupMax: groupMax
-
     }
     this.props.addNewReview(formPayload)
     this.handleClearForm(event)
+    }
   }
-}
 
   handleChange(event) {
     this.setState({ [event.target.name]: event.target.value })
