@@ -96,6 +96,4 @@ RSpec.describe Place, type: :model do
       expect(place.user["first_name"]).to eq("Ashley")
     end
   end
-
-
 end
