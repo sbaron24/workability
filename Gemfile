@@ -34,6 +34,7 @@ group :development, :test do
   gem 'rspec'
   gem 'capybara'
   gem 'launchy'
+  gem "dotenv-rails"
 end
 
 group :development do
@@ -61,3 +62,5 @@ gem 'foundation-rails', '~> 5.0'
 gem 'webpacker', '~> 3.3'
 gem "active_model_serializers"
 gem "carrierwave"
+gem "fog-aws"
+gem "fog"
