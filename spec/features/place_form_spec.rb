@@ -20,7 +20,7 @@ feature "User signs in and adds new place with form" do
     fill_in 'Name', with: 'Chuck E. Cheese'
     fill_in 'Description', with: 'germ time'
     select 'Library', from: 'Type'
-    select 'Somerville', from: 'Neighborhood'
+    select 'Back Bay', from: 'Neighborhood'
     choose 'place_wifi_valuetrue'
     choose 'place_food_valuefalse'
     choose 'place_outdoor_seating_valuetrue'
@@ -33,7 +33,7 @@ feature "User signs in and adds new place with form" do
     click_button 'Add a Place'
 
     expect(page).to have_content("Chuck E. Cheese")
-    expect(page).to have_content("Somerville")
+    expect(page).to have_content("Back Bay")
   end
 
   scenario 'user does not fill out some fields' do
