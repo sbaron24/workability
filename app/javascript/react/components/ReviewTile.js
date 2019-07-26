@@ -15,9 +15,9 @@ const ReviewTile = (props) => {
 
   return (
     <div className="review-tile panel">
+      <div className='title'>
       <h3>{props.title}</h3>
-      <p><i>{stringDate}</i></p>
-      <p>{max_capacity_message}</p>
+      </div>
       <div className='ratings-div'>
         <div className='wifi rating'>
           <p className="center">wifi: {props.wifi_rating}</p>
@@ -32,6 +32,8 @@ const ReviewTile = (props) => {
           <p className="center">outlets: {props.outlet_rating}</p>
         </div>
       </div>
+      <p>{stringDate}</p>
+      <p>{max_capacity_message}</p>
       <p id='body-text'> {props.body} </p>
     </div>
   )

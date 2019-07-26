@@ -82,14 +82,19 @@ class PlacesShowContainer extends Component {
     })
 
     return(
-      <div>
+      <div className = "show-page row">
         <ShowDetails
           place= {this.state.place}
         />
-        <ReviewFormContainer
-          addNewReview={this.addNewReview}
-        />
-        {reviews}
+          <div className="review-index columns large-8">
+            {reviews}
+          </div>
+          <div className="review-form sticky columns large-4 panel">
+             <h3>Add a Review</h3>
+            <ReviewFormContainer
+              addNewReview={this.addNewReview}
+            />
+        </div>
       </div>
     )
   }
