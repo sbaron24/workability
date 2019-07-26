@@ -22,7 +22,7 @@ feature "User signs in and edits place with form" do
     fill_in 'Name', with: 'Chuck E. Cheese'
     fill_in 'Description', with: 'germ time'
     select 'Library', from: 'Type'
-    select 'Somerville', from: 'Neighborhood'
+    select 'Back Bay', from: 'Neighborhood'
     choose 'place_wifi_valuetrue'
     choose 'place_food_valuefalse'
     choose 'place_outdoor_seating_valuetrue'

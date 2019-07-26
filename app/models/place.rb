@@ -28,10 +28,41 @@ class Place < ApplicationRecord
   end
 
   def self.place_type
-    ['Coffee shop', 'Park', 'Library', 'Museum']
+    ['Coffee Shop', 'Coworking Space', 'Park', 'Library', 'Museum']
   end
 
   def self.neighborhoods
-    ['Boston', 'Medford', 'Concord', 'Somerville', 'Brighton']
+    [
+      'Allston',
+      'Back Bay',
+      'Bay Village',
+      'Beacon Hill',
+      'Brighton',
+      'Charlestown',
+      'Chinatown',
+      'Chinatown/Leather District',
+      'Dorchester',
+      'Downtown',
+      'East Boston',
+      'Fenway/Kenmore',
+      'Hyde Park',
+      'Jamaica Plain',
+      'Mattapan',
+      'Mission Hill',
+      'North End',
+      'Roslindale',
+      'Roxbury',
+      'South Boston',
+      'South End',
+      'West End',
+      'West Roxbury',
+      'Assembly Square',
+      'Ball Square',
+      'Davis Square',
+      'Magoun Square',
+      'Porter Square',
+      'Powder House Square',
+      'Union Square'
+    ]
   end
 end

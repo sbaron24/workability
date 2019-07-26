@@ -22,7 +22,7 @@ feature "user adds a place photo when adding a new place" do
     fill_in 'Name', with: 'Baked by Emily'
     fill_in 'Description', with: 'yummy baked goods'
     select 'Library', from: 'Type'
-    select 'Somerville', from: 'Neighborhood'
+    select 'Back Bay', from: 'Neighborhood'
     choose 'place_wifi_valuetrue'
     choose 'place_food_valuefalse'
     choose 'place_outdoor_seating_valuetrue'
