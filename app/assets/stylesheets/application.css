@@ -27,10 +27,95 @@ body {
 
 .fitpic {
   height: 250px;
-  width:380px;
+  width: 380px;
 }
 
 .tile {
   width: auto;
   display: inline-block;
+}
+
+.review-tile {
+  border-radius: 3px;
+  padding-left: 50px;
+}
+.ratings-div {
+  width: 100%;
+  padding: 10px 10px;
+}
+
+.rating {
+  width: 100px;
+  display: inline-block;
+  border-radius: 5px;
+  text-align: center;
+  margin-left: 5px;
+}
+
+.panel .rating p {
+  color: white;
+}
+
+.center {
+  margin: auto;
+  padding: 10px 10px;
+  color: white;
+  font-family: sans-serif;
+}
+
+.wifi {
+  margin: 10px 10px;
+  background-color: #438cd1;
+}
+
+.noise {
+  margin: 10px 10px;
+  background-color: #43d1c0;
+}
+
+.outlet {
+  margin: 10px 10px;
+  background-color: #43d175;
+}
+
+.capacity {
+  margin: 10px 10px;
+  background-color: #a943d1;
+}
+
+#body-text {
+  padding: 0px 0px;
+}
+
+.show-page {
+}
+
+.place-details {
+  margin-left: 20px;
+}
+
+.place-type {
+  color: grey;
+  font-style: italic;
+}
+
+.title {
+  text-align: center;
+}
+
+.ratings-div {
+  text-align: center;
+}
+
+.review-form {
+  text-align: center;
+}
+
+.sticky {
+  position: sticky;
+  top: 20px;
+}
+
+.button {
+  margin: 5px 10px;
 }

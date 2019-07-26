@@ -189,14 +189,14 @@ class ReviewFormContainer extends Component {
         <TextField
           content={this.state.title}
           handleInputChange={this.handleChange}
-          label="Review Title"
+          label="Title"
           name="title"
         />
 
         <TextField
           content={this.state.body}
           handleInputChange={this.handleChange}
-          label="Review Body"
+          label="Description"
           name="body"
         />
 
@@ -232,8 +232,8 @@ class ReviewFormContainer extends Component {
         />
 
         <div className="button-group">
+          <input className="button success" type="submit" value="Submit" />
           <button className="button" onClick={this.handleClearForm}>Clear</button>
-          <input className="button" type="submit" value="Submit" />
         </div>
       </form>
       </div>
