@@ -13,13 +13,15 @@
 ## Project Summary
 Workability is a review site of public workspaces, e.g., coffee shops, parks, museums and more. The App is designed to allow for finding, enjoying and rating productive work environments throughout the Boston.
 
-##P Project Description
+# Project Description
 Serving as a group project for Launch Academy {<25>}, we were charged with creating a review site from inception to deployment.<br/>
 <br/>
 Unauthenticated and authentic users have vary degrees of access in the App.
 * Unauthenticated users can view sites and reviews, but are not able to add a review.
-* Authenticated users are able to <br/> add a site.<br/>
-add a review. <br/> edit their own review.
+* Authenticated users are able to <br/> 
+1. add a site.<br/>
+2. add a review. <br/>
+3. edit their own review.
 * Administrators are able to add and delete reviews and sites.
 
 ## Technology Showcased
