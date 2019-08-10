@@ -17,12 +17,12 @@ Workability is a review site of public workspaces, e.g., coffee shops, parks, mu
 Serving as a group project for Launch Academy {<25>}, we were charged with creating a review site from inception to deployment.<br/>
 <br/>
 Unauthenticated and authentic users have vary degrees of access in the App.
-1. Administrators are able to add and delete reviews and sites.
-2. Unauthenticated users can view sites and reviews, but are not able to add a review.
-3. Authenticated users are able to:
-  * add a site.
-  * add a review.
-  * edit/delete their own review.
+* Administrators are able to add and delete reviews and sites.
+* Unauthenticated users can view sites and reviews, but are not able to add a review.
+* Authenticated users are able to:
+    * add a site.
+    * add a review.
+    * edit/delete their own review.
 
 # Technology Showcased
 * CRUD principles
@@ -40,7 +40,7 @@ Unauthenticated and authentic users have vary degrees of access in the App.
 * Group Projact for Launch Academy {<25>}
 * 10 day window (Mon-Fri; 9 am - 5 pm)
 * Morning/Afternoon Stand-ups
-* Rotating Pair Programming with all four members of the group.
+* Rotating Paired Programming with all four members of the group.
 * Grade __ [You tell us](mailto:cetchechury@gmail.com).
 
 # About Launch Academy
