@@ -10,38 +10,44 @@
 
 [![Codeship Status for sbaron24/workability](https://app.codeship.com/projects/a35280a0-9d9d-0137-b35a-4a3940a6f970/status?branch=master)](https://app.codeship.com/projects/359097)
 
-## Project Summary
+# Project Summary
 Workability is a review site of public workspaces, e.g., coffee shops, parks, museums and more. The App is designed to allow for finding, enjoying and rating productive work environments throughout the Boston.
 
 # Project Description
 Serving as a group project for Launch Academy {<25>}, we were charged with creating a review site from inception to deployment.<br/>
 <br/>
 Unauthenticated and authentic users have vary degrees of access in the App.
-* Unauthenticated users can view sites and reviews, but are not able to add a review.
-* Authenticated users are able to <br/> 
-1. add a site.<br/>
-2. add a review. <br/>
-3. edit their own review.
 * Administrators are able to add and delete reviews and sites.
+* Unauthenticated users can view sites and reviews, but are not able to add a review.
+* Authenticated users are able to: <br/>
+<li>
+add a site.
+</li>
+<li>
+add a review.
+</li>
+<li>
+edit/delete their own review.
+</li>
 
-## Technology Showcased
+# Technology Showcased
 * CRUD principles
 * React
 * Rails
 * PostgreSQL
 
-##Group Members
+# Group Members
 * Jenn Adler
 * Sean Baron
 * Chris Etchechury
 * Jay Kim
 
-## Project Constraints
+# Project Constraints
 * Group Projact for Launch Academy {<25>}
 * 10 day window (Mon-Fri; 9 am - 5 pm)
 * Morning/Afternoon Stand-ups
 * Rotating Pair Programming with all four members of the group.
 * Grade __ [You tell us](mailto:cetchechury@gmail.com).
 
-## About Launch Academy
+# About Launch Academy
 BIO here
