@@ -1,33 +1,45 @@
-# README
+<p align="center">
+  <a>
+    <img alt="Workability" src="https://github.com/sbaron24/workability/blob/master/workabilitylogo.png" width="500">
+  </a>
+</p>
 
-[![Codeship Status for sbaron24/workability](https://app.codeship.com/projects/e81debd0-8954-0137-35d4-3e01594af01a/status?branch=master)](https://app.codeship.com/projects/354528)
+<h3 align="center">
+  Workability
+</h3>
 
-Workability is an app that helps users or groups find great workspaces.
+[![Codeship Status for sbaron24/workability](https://app.codeship.com/projects/a35280a0-9d9d-0137-b35a-4a3940a6f970/status?branch=master)](https://app.codeship.com/projects/359097)
 
-Authors: 
-Jay Kim
-Jenn Adler
-Chris Etchechury
-Sean Baron
+## Project Summary
+Workability is a review site of public workspaces, e.g., coffee shops, parks, museums and more. The App is designed to allow for finding, enjoying and rating productive work environments throughout the Boston.
 
-Things you may want to cover:
+##P Project Description
+Serving as a group project for Launch Academy {<25>}, we were charged with creating a review site from inception to deployment.<br/>
+<br/>
+Unauthenticated and authentic users have vary degrees of access in the App.
+* Unauthenticated users can view sites and reviews, but are not able to add a review.
+* Authenticated users are able to <br/> add a site.<br/>
+add a review. <br/> edit their own review.
+* Administrators are able to add and delete reviews and sites.
 
-* Ruby version 2.4.5
+## Technology Showcased
+* CRUD principles
+* React
+* Rails
+* PostgreSQL
 
-* System dependencies
+##Group Members
+* Jenn Adler
+* Sean Baron
+* Chris Etchechury
+* Jay Kim
 
-This project was built using make_it_so (https://github.com/LaunchAcademy/make_it_so).
+## Project Constraints
+* Group Projact for Launch Academy {<25>}
+* 10 day window (Mon-Fri; 9 am - 5 pm)
+* Morning/Afternoon Stand-ups
+* Rotating Pair Programming with all four members of the group.
+* Grade __ [You tell us](mailto:cetchechury@gmail.com).
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## About Launch Academy
+BIO here
