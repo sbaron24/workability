@@ -17,9 +17,11 @@ Workability is a review site of public workspaces, e.g., coffee shops, parks, mu
 Serving as a group project for Launch Academy {<25>}, we were charged with creating a review site from inception to deployment.<br/>
 <br/>
 Unauthenticated and authentic users have vary degrees of access in the App.
+<ul>
 * Administrators are able to add and delete reviews and sites.
 * Unauthenticated users can view sites and reviews, but are not able to add a review.
-* Authenticated users are able to: <br/>
+* Authenticated users are able to:
+</ul>
 <li>
 add a site.
 </li>
