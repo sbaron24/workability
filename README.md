@@ -20,9 +20,9 @@ Unauthenticated and authentic users have vary degrees of access in the App.
 1. Administrators are able to add and delete reviews and sites.
 2. Unauthenticated users can view sites and reviews, but are not able to add a review.
 3. Authenticated users are able to:
-* add a site.
-* add a review.
-* edit/delete their own review.
+  * add a site.
+  * add a review.
+  * edit/delete their own review.
 
 # Technology Showcased
 * CRUD principles
