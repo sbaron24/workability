@@ -14,7 +14,7 @@
 Workability is a review site of public workspaces, e.g., coffee shops, parks, museums and more. It's designed to allow for finding, enjoying and rating productive work environments throughout the Boston metroplex.
 
 # Project Description
-Serving as a group project for Launch Academy {<25>}, we were charged with creating a review site from inception to deployment.<br/>
+Serving as a group project for Launch Academy, we were charged with creating a review site from inception to deployment.<br/>
 <br/>
 Unauthenticated and authenticed users have varying degrees of access:
 * Administrators are able to add and delete reviews and workspaces.
