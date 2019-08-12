@@ -39,11 +39,7 @@ Unauthenticated and authenticed users have varying degrees of access:
 * Jay Kim
 
 # Project Constraints
-* Group Project for Launch Academy {<25>}
+* Group project for [Launch Academy](https://launchacademy.com/)
 * 10 day window (Mon-Fri; 9 am - 5 pm)
-* Morning/Afternoon stand-ups using Trello, led by former Wayfair project manager
+* Morning/afternoon stand-ups using Trello, led by former Wayfair project manager
 * Rotating paired programming with all four members of the group
-
-# About Launch Academy
-
-Learn more about [Launch Academy](https://launchacademy.com/).
