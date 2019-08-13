@@ -26,7 +26,7 @@ Unauthenticated and authenticated users have varying degrees of access to the si
 * Paired-programming
 
 # Technology Showcased
-* AWS file storage
+* AWS file storage via CarrierWave gem
 * CSS 3
 * HTML 5
 * PostgreSQL
@@ -43,5 +43,5 @@ Unauthenticated and authenticated users have varying degrees of access to the si
 # Project Constraints
 * Group project for [Launch Academy](https://launchacademy.com/)
 * 10 day window (Mon-Fri; 9 am - 5 pm)
-* Morning/afternoon stand-ups using Trello, led by former Wayfair project manager
+* Morning/afternoon stand-ups using Trello, led by former Wayfair project manager.
 * Rotating paired programming with all four members of the group
