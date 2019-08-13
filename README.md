@@ -5,7 +5,7 @@
 [![Codeship Status for sbaron24/workability](https://app.codeship.com/projects/a35280a0-9d9d-0137-b35a-4a3940a6f970/status?branch=master)](https://app.codeship.com/projects/359097)
 
 # Project Summary
-Workability is a review site of public workspaces, e.g., coffee shops, parks, museums and more. It's designed to allow for finding, enjoying and rating productive work environments throughout the Boston metroplex.
+Workability is a review site of public workspaces, e.g., coffee shops, parks, museums and more. It is designed to allow for finding, enjoying and rating productive work environments throughout the Boston metroplex.
 
 # Project Description
 Serving as a group project for Launch Academy, we were charged with creating a review site from inception to deployment.<br/>
