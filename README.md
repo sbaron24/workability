@@ -1,9 +1,3 @@
-<p align="center">
-  <a>
-    <img alt="Workability" src="https://github.com/sbaron24/workability/blob/master/workabilitylogo.png" width="500">
-  </a>
-</p>
-
 <h3 align="center">
   Workability
 </h3>
