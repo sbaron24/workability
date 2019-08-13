@@ -10,7 +10,7 @@ Workability is a review site of public workspaces, e.g., coffee shops, parks, mu
 # Project Description
 Serving as a group project for Launch Academy, we were charged with creating a review site from inception to deployment.<br/>
 <br/>
-Unauthenticated and authenticed users have varying degrees of access:
+Unauthenticated and authenticated users have varying degrees of access to the site:
 * Administrators are able to add and delete reviews and workspaces.
 * Unauthenticated users can view workspaces and reviews, but are not able to add them.
 * Authenticated users are able to:
@@ -18,13 +18,21 @@ Unauthenticated and authenticed users have varying degrees of access:
     * add a review.
     * edit/delete their own review.
 
-# Technology Showcased
+# Design Philosophy & Principles
+* Agile methodology
 * CRUD principles
-* React
-* Rails
-* PostgreSQL
-* Ruby Object Oriented Programming
+* Object Oriented Programming
+* Test Driven Development
+* Paired-programming
+
+# Technology Showcased
 * AWS file storage
+* CSS 3
+* HTML 5
+* PostgreSQL
+* Rails
+* React
+* Ruby 5
 
 # Group Members
 * Jenn Adler
